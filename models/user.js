@@ -11,9 +11,7 @@ export default (sequelize, DataTypes) => {
         password: {
             type: DataTypes.STRING
         }
-    }, {
-            underscored: true
-        });
+    });
 
     User.associate = (models) => {
         User.belongsToMany(models.Team, {
@@ -23,7 +21,7 @@ export default (sequelize, DataTypes) => {
                 field: 'user_id'
             }
         });
-        User.belongsToMany(models.Team, {
+        User.belongsToMany(models.Channel, {
             through: 'channel_member',
             foreignKey: {
                 name: 'userId',

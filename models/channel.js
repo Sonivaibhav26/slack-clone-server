@@ -6,9 +6,7 @@ export default (sequelize, DataTypes) => {
         public: {
             type: DataTypes.BOOLEAN,
         }
-    }, {
-            underscored: true
-        });
+    });
 
     Channel.associate = (models) => {
         Channel.belongsTo(models.Team, {
